@@ -23,7 +23,10 @@ body {
   --header-back: #ececec;
   --social-icon: #AFB1B8;
   --team-back: #F5F4FA;
-  --back: rgba(255,255,255,0.1)
+  --back: rgba(255,255,255,0.1);
+  --transition-color: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-background: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-shadow: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button{
@@ -132,6 +135,11 @@ img {
   color: var(--link-collor);
 }
 
+.link{
+  transition: var(--transition-color);
+  
+}
+
 .link-current { 
   display: block;
   
@@ -199,17 +207,19 @@ img {
   color: var(--primary-text-color);
 }
 
-/* .nav-links :hover,
+.nav-links :hover,
 .nav-links :focus {
   color: var(--link-collor);
-} */
+}
 
 .nav-links {
   display: flex;
   margin-left: auto; 
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 0px; 
+  transition: var(--transition-color); 
 }
+  
 
 .nav-icon {
   display: block;
@@ -546,11 +556,16 @@ img {
   display: flex;
   width: 44px;
   height: 44px;
-  color: var(--social-icon);
-  /* background-color: blue; */
   align-items: center;
   justify-content: center;
+  
+  
   border-radius: 50%;
+  transition: var(--transition-background);
+  transition: var(--transition-color); 
+ 
+  color: var(--social-icon);
+  /* background-color: blue; */
 }
 
 .item-icon:not(:first-child){
@@ -582,6 +597,7 @@ img {
 /* .icon{
   fill: currentColor;
 } */
+/* Наши клиенты */
 
 .our-clients{
   padding-top: 94px;
@@ -635,6 +651,10 @@ img {
   height: 90px;
   align-items: center;
   justify-content: center;
+ 
+  transition: var(--transition-color);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+  
   color: var(--social-icon);
   border: 1px solid var(--social-icon)
 }
@@ -717,16 +737,19 @@ img {
   margin-top: 9px;
 }
 
-.footer-nav-link {
-  display: block;
-}
-
 .footer-nav-link:hover,
 .footer-nav-link:focus {
   color: var(--link-collor);
 }
 
 .footer-nav-link {
+  display: block;
+  
+  margin-top: 9px;
+  margin-bottom: 9px;
+  transition: var( --transition-color);
+  
+  
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -734,8 +757,7 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
-  margin-top: 9px;
-  margin-bottom: 9px;
+  
 }
 /* футер бокс:присоединяйся и соц сети */
 
@@ -779,9 +801,12 @@ img {
   display: flex;
   align-items: center; 
   justify-content: center;
+  
   width: 44px;
   height: 44px;
   border-radius: 50%; 
+  transition: var(--transition-background);
+  
   background-color: rgba(255, 255, 255, 0.1); ;
 }
  
@@ -868,6 +893,14 @@ img {
 .main-button-item{
   display: flex; 
   border-radius: 4px;
+  padding-left: 22px;
+  padding-right: 22px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+   
+  transition: var(--transition-background);
+  transition: var(--transition-color);
+  
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -876,10 +909,7 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
   color: var( --h-collor);
-  padding-left: 22px;
-  padding-right: 22px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+  
 }
 
 
@@ -924,13 +954,18 @@ img {
 }
 
 .progects-name {
+  display: flex;
   width: 370px;
   /* outline: 1px solid #008000; */
   margin-right: 30px;
   margin-bottom: 30px;
+  
+  
   background-color: var(--white-text-collor);
   border: 1px solid #EEEEEE;
+  
 }
+
 
 /* .progects-name:hover,
 .progects-name:focus{
@@ -958,14 +993,44 @@ img {
   color: var(--primary-text-color);
 }
 
-.product-title {
-  display: block;
+.product-title{
+  /* display: flex; */
+  width: 100%;
+  height: 100%;
+  transition: var(--transition-shadow);
 }
 
 .product-title:hover,
 .product-title:focus{
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
+.card-image{
+  position: relative;
+  overflow: hidden;
+  border-style: none;
+  width: 368px;
+  height: 294px;
+}
+
+
+.progect-overlay{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(-100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+}
+
+.card-image:hover .progect-overlay{
+  transform: translateY(0);
+}
+
 
 .our-product {
   padding-top: 20px;
@@ -983,6 +1048,20 @@ img {
 .product {
   margin-top: 4px;
   margin-bottom: 0px;
+}
+
+.overlay-text{ 
+  margin-left: 24px;
+  margin-right: 24px;
+  margin-top: 63px;
+  margin-bottom: 63px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px; 
+  letter-spacing: 0.03em;
+  color: var(--white-text-collor);
 }
 
 /* .frame {
