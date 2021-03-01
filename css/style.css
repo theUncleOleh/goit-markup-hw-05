@@ -881,7 +881,7 @@ img {
   justify-content: center;
   margin-top: 0px;
   padding-left: 0px;
-  margin-bottom: 34px; 
+  margin-bottom: 50px; 
  
 }
 
@@ -968,11 +968,9 @@ img {
   margin-right: 30px;
   margin-bottom: 30px;
   
-  
-  background-color: var(--white-text-collor);
-  border: 1px solid #EEEEEE;
-  
+  background-color: var(--white-text-collor);  
 }
+ 
 
 
 /* .progects-name:hover,
@@ -1020,7 +1018,9 @@ img {
   width: 368px;
   height: 294px;
 }
-
+.product-image{
+  display: block;
+}
 
 .progect-overlay{
   position: absolute;
