@@ -40,7 +40,7 @@ body {
   left: 0;
  
   background-color: var(--white-text-collor);
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 button{
@@ -1025,6 +1025,7 @@ img {
   width: 368px;
   height: 294px;
 }
+
 .product-image{
   display: block;
 }
@@ -1086,9 +1087,36 @@ img {
 /* .frame {
   outline: 2px solid green;
 } */
+ 
+/* страница контакты */
+
+.contact-hero{
+  min-height: 600px;
+  background-color: darkblue;
+}
+
+.contact-hero-title{
+  text-align: center;
+  padding-top: 200px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+
+  /* outline: 1px solid green; */
+
+  color: var(--white-text-collor);
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 
 /*  контейнер для стилизации hero
  */
+
 .hero-container {
   width: 600px;
   margin-left: auto;
